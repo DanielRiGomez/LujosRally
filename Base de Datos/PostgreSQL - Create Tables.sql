@@ -22,6 +22,5 @@ CREATE TABLE sales (
     date_sale        DATE           NOT NULL,
     units_sales      INT4           NOT NULL,
     valor_venta      MONEY          NOT NULL,
-    id_product       INT8           NOT NULL,
-    id_user          INT4           NOT NULL
+    id_product       INT8           NOT NULL
 );
