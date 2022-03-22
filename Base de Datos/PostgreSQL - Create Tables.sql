@@ -1,7 +1,7 @@
 CREATE TABLE users (
     id_user           SERIAL         PRIMARY KEY,
     nombre_user       VARCHAR(50)    NOT NULL,
-    password_user     VARCHAR(2)     NOT NULL
+    password_user     VARCHAR(15)     NOT NULL
 );
 
 CREATE TABLE stock (
