@@ -34,8 +34,8 @@ public class JFrameMain extends JFrame {
 	private void initComponents(ActionListener listener) {
 		getContentPane().removeAll();
 		panel2.setLayout(new BorderLayout());
-//		addPanelAdmin(listener);
-		addPanelStart(listener);
+		addPanelAdmin(listener);
+//		addPanelSells(listener);;
 		add(panel2);
 
 	}
@@ -66,27 +66,34 @@ public class JFrameMain extends JFrame {
 		JPRegisterSucess panelButton = new JPRegisterSucess(actionListener);
 
 		rounderPanel.add(panelButton);
+		rounderPanel.add(panelButton);
 		panel2.setBorder(new EmptyBorder(200, 300, 250, 300));
 		panel2.add(rounderPanel);
 	}
 
-	public void addPanelOptions(ActionListener actionListener) {
-		panel2.removeAll();
-		JMenuOption panelButton = new JMenuOption(actionListener);
-		panel2.setAlignmentX(SwingConstants.LEFT);
-
-		panel2.add(panelButton);
-	}
-	
 	public void addPanelStart(ActionListener actionListener) {
 		panel2.removeAll();
-		JMenuOption panelButton = new JMenuOption(actionListener);
-		JPLujosRally init = new JPLujosRally();
-		
-		panel2.setAlignmentX(SwingConstants.VERTICAL);
-		
+
+		JPLujosRally panelButton = new JPLujosRally(actionListener);
+
+		panel2.setBorder(new EmptyBorder(0, 0, 0, 0));
 		panel2.add(panelButton);
-		panel2.add(init);
+	}
+
+	public void addPanelSells(ActionListener actionListener) {
+		panel2.removeAll();
+		
+		JPRallySell panelButton = new JPRallySell(actionListener);
+
+		panel2.setBorder(new EmptyBorder(0, 10, 0, 0));
+		panel2.add(panelButton);
+		
+//		JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_BLUE_PANEL, 30, 30);
+//		JPRegisterSell panelButton = new JPRegisterSell(actionListener);
+//
+//		rounderPanel.add(panelButton);
+//		panel2.setBorder(new EmptyBorder(0, 300, 250, 300));
+//		panel2.add(rounderPanel);
 	}
 
 //

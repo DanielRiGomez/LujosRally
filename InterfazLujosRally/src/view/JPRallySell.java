@@ -6,11 +6,11 @@ import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class JPLujosRally extends JPanel {
+public class JPRallySell extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	public JPLujosRally(ActionListener listener) {
+	public JPRallySell(ActionListener listener) {
 		setVisible(true);
 		setOpaque(false);
 		initComponents(listener);
@@ -19,17 +19,23 @@ public class JPLujosRally extends JPanel {
 	private void initComponents(ActionListener actionListener) {
 		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 		add(new JMenuOption(actionListener));
-		add(labelPanel());
+		add(labelPanel(actionListener));
 	}
 
-	private JPanel labelPanel() {
+	private JPanel labelPanel(ActionListener listener) {
 		JPanel panel = new JPanel();
 		panel.setOpaque(false);
 
+		JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_BLUE_PANEL, 30, 30);
 		panel.setBorder(new EmptyBorder(200, 150, 350, 0));
-		JLabelImage image = new JLabelImage(15, 15, Constants.ICON_CAPT, 600, 400, Constants.COLOR_GRAY_LOG);
+		JPRegisterSell image = new JPRegisterSell(listener);
+		
+		rounderPanel.add(image);
+		
+		panel.setBorder(new EmptyBorder(150, 200, 250, 300));
+		panel.add(rounderPanel);
+		
 
-		panel.add(image);
 		add(panel);
 		return panel;
 	}

@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
 public class JMenuOption extends JPanel {
 
@@ -13,7 +12,6 @@ public class JMenuOption extends JPanel {
 
 	public JMenuOption(ActionListener listener) {
 		setBackground(Constants.COLOR_BLUE_PANEL);
-		setBorder(new EmptyBorder(0, 0, 0, 990));
 		initComponents(listener);
 		setVisible(true);
 	}
@@ -26,6 +24,7 @@ public class JMenuOption extends JPanel {
 		add(addSellProduct(listener));
 		add(addShowInve(listener));
 		add(addShowSell(listener));
+		add(addEdit(listener));
 	}
 
 	private JPanel labelPanel() {
@@ -99,6 +98,19 @@ public class JMenuOption extends JPanel {
 		JButtonInformation ini = new JButtonInformation(10, 10, Constants.BUTTON_SHO_SELLS, Constants.ICON_MONEY, 60,
 				60, Constants.COLOR_BLUE_PANEL2, Color.black, Constants.FONT_NUNITO);
 		ini.setActionCommand(Constants.BUTTON_SHO_SELLS);
+		ini.addActionListener(listener);
+		panel.add(ini);
+
+		return panel;
+	}
+
+	public JPanel addEdit(ActionListener listener) {
+		JPanel panel = new JPanel();
+		panel.setBackground(Constants.COLOR_BLUE_LOG);
+
+		JButtonInformation ini = new JButtonInformation(10, 10, Constants.BUTTON_EDI_INFOR, Constants.ICON_EDIT, 60, 60,
+				Constants.COLOR_BLUE_PANEL2, Color.black, Constants.FONT_NUNITO);
+		ini.setActionCommand(Constants.BUTTON_EDI_INFOR);
 		ini.addActionListener(listener);
 		panel.add(ini);
 

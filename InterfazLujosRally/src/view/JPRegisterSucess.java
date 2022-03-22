@@ -12,7 +12,7 @@ public class JPRegisterSucess extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	public JPRegisterSucess(ActionListener listener) {
-		setOpaque(false);
+		setBackground(Color.pink);
 		initComponents(listener);
 		setVisible(true);
 	}
