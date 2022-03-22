@@ -38,7 +38,11 @@ public class ClientAdmin implements ActionListener {
 			;
 			break;
 		case Constants.BUTTON_REG_PRODUCT:
-//			frameMain.addPanelAdmin(this);
+			frameMain.addPanelRegisterProduct(this);
+			;
+			break;
+		case Constants.BUTTON_REGISTER_PRODUC:
+			frameMain.addPanelStart(this);
 			;
 			break;
 		case Constants.BUTTON_SEL_PRODUCT:

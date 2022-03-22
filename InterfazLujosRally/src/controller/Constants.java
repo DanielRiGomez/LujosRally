@@ -18,6 +18,7 @@ public class Constants {
 	public static final String BUTTON_REGISTER_USER = "Registrarse";
 	public static final String BUTTON_REGISTER_USER2 = "Registrar";
 	public static final String BUTTON_REGISTER_SELL = "Registrar Venta";
+	public static final String BUTTON_REGISTER_PRODUC = "Registrar Producto";
 	public static final String BUTTON_RETURN_SELL = "Regresar";
 	public static final String BUTTON_RETURN = "Volver";
 

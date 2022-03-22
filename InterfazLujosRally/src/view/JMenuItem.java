@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.event.ActionListener;
 
 import javax.swing.JMenu;
@@ -16,53 +15,65 @@ public class JMenuItem extends JMenuBar {
 	}
 
 	private void initComponents(ActionListener listener) {
-//		add(generateOptionReport(listener));
+		add(generateOptionReport(listener));
 	}
 
-//	private JMenu generateOptionReport(ActionListener listener) {
-//		JMenuTypeBar menu = new JMenuTypeBar(Constants.TEXT_MENU, Constants.FONT_NUNITO_BOLD,
-//				Constants.COLOR_PURPLE_PANEL, Constants.ICON_MENU, 30, 30);
-//		menu.setPreferredSize(new Dimension(130, 50));
-//
-//		JMenuType report1 = new JMenuType(Constants.COLOR_PURPLE_PANEL, Constants.TEXT_AVAILABLE, Constants.FONT_NUNITO,
-//				Color.WHITE);
-//
-//		report1.setActionCommand(Constants.TEXT_AVAILABLE);
-//		report1.addActionListener(listener);
-//
-//		JMenuType report2 = new JMenuType(Constants.COLOR_PURPLE_PANEL, Constants.TEXT_ADD_BOOK, Constants.FONT_NUNITO,
-//				Color.WHITE);
-//
-//		report2.setActionCommand(Constants.TEXT_ADD_BOOK);
-//		report2.addActionListener(listener);
-//		
-//		JMenuType report3 = new JMenuType(Constants.COLOR_PURPLE_PANEL, Constants.TEXT_DELETE, Constants.FONT_NUNITO,
-//				Color.WHITE);
-//		report3.setActionCommand(Constants.TEXT_DELETE);
-//		report3.addActionListener(listener);
-//
-//		JMenuType report4 = new JMenuType(Constants.COLOR_PURPLE_PANEL, Constants.TEXT_SEARCH_TITLE,
-//				Constants.FONT_NUNITO, Color.WHITE);
-//		report4.setActionCommand(Constants.TEXT_SEARCH_TITLE);
-//		report4.addActionListener(listener);
-//
-//		JMenuType report5 = new JMenuType(Constants.COLOR_PURPLE_PANEL, Constants.TEXT_SEARCH_AUTHOR,
-//				Constants.FONT_NUNITO, Color.WHITE);
-//		report5.setActionCommand(Constants.TEXT_SEARCH_AUTHOR);
-//		report5.addActionListener(listener);
-//
-//		JMenuType report6 = new JMenuType(Constants.COLOR_PURPLE_PANEL, Constants.BUTTON_EXIT, Constants.FONT_NUNITO,
-//				Color.WHITE);
-//		report6.setActionCommand(Constants.BUTTON_EXIT);
-//		report6.addActionListener(listener);
-//
-//		menu.add(report1);
-//		menu.add(report2);
-//		menu.add(report3);
-//		menu.add(report4);
-//		menu.add(report5);
-//		menu.add(report6);
+	private JMenu generateOptionReport(ActionListener listener) {
 
-//		return menu;
-//	}
+		JMenuTypeBar menu = new JMenuTypeBar(Constants.BUTTON_EDI_INFOR, Constants.FONT_NUNITO, Color.BLACK,
+				Constants.ICON_EDIT, 60, 60);
+
+		JMenuType report1 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_EDI_NAME, Constants.FONT_NUNITO,
+				Color.BLACK);
+
+		report1.setActionCommand(Constants.TEXT_EDI_NAME);
+		report1.addActionListener(listener);
+
+		JMenuType report2 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_EDI_UNIT, Constants.FONT_NUNITO,
+				Color.BLACK);
+
+		report2.setActionCommand(Constants.TEXT_EDI_UNIT);
+		report2.addActionListener(listener);
+
+		JMenuType report3 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_EDI_PRICE, Constants.FONT_NUNITO,
+				Color.BLACK);
+		report3.setActionCommand(Constants.TEXT_EDI_PRICE);
+		report3.addActionListener(listener);
+
+		JMenuType report4 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_EDI_TYCAR, Constants.FONT_NUNITO,
+				Color.BLACK);
+		report4.setActionCommand(Constants.TEXT_EDI_TYCAR);
+		report4.addActionListener(listener);
+
+		JMenuType report5 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_EDI_MARC, Constants.FONT_NUNITO,
+				Color.BLACK);
+		report5.setActionCommand(Constants.TEXT_EDI_MARC);
+		report5.addActionListener(listener);
+
+		JMenuType report6 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_EDI_REF, Constants.FONT_NUNITO,
+				Color.BLACK);
+		report6.setActionCommand(Constants.TEXT_EDI_REF);
+		report6.addActionListener(listener);
+
+		JMenuType report7 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_EDI_DESCR, Constants.FONT_NUNITO,
+				Color.BLACK);
+		report6.setActionCommand(Constants.TEXT_EDI_DESCR);
+		report6.addActionListener(listener);
+
+		JMenuType report8 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_EDI_CHARAC, Constants.FONT_NUNITO,
+				Color.WHITE);
+		report6.setActionCommand(Constants.TEXT_EDI_CHARAC);
+		report6.addActionListener(listener);
+
+		menu.add(report1);
+		menu.add(report2);
+		menu.add(report3);
+		menu.add(report4);
+		menu.add(report5);
+		menu.add(report6);
+		menu.add(report7);
+		menu.add(report8);
+
+		return menu;
+	}
 }

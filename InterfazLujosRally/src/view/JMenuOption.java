@@ -107,11 +107,11 @@ public class JMenuOption extends JPanel {
 	public JPanel addEdit(ActionListener listener) {
 		JPanel panel = new JPanel();
 		panel.setBackground(Constants.COLOR_BLUE_LOG);
-
-		JButtonInformation ini = new JButtonInformation(10, 10, Constants.BUTTON_EDI_INFOR, Constants.ICON_EDIT, 60, 60,
-				Constants.COLOR_BLUE_PANEL2, Color.black, Constants.FONT_NUNITO);
-		ini.setActionCommand(Constants.BUTTON_EDI_INFOR);
-		ini.addActionListener(listener);
+		JMenuItem ini = new JMenuItem(listener);
+//		JButtonInformation ini = new JButtonInformation(10, 10, Constants.BUTTON_EDI_INFOR, Constants.ICON_EDIT, 60, 60,
+//				Constants.COLOR_BLUE_PANEL2, Color.black, Constants.FONT_NUNITO);
+//		ini.setActionCommand(Constants.BUTTON_EDI_INFOR);
+//		ini.addActionListener(listener);
 		panel.add(ini);
 
 		return panel;

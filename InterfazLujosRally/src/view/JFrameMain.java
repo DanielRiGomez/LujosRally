@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -35,7 +36,7 @@ public class JFrameMain extends JFrame {
 		getContentPane().removeAll();
 		panel2.setLayout(new BorderLayout());
 		addPanelAdmin(listener);
-//		addPanelSells(listener);;
+//		addPanelChangeName(listener);
 		add(panel2);
 
 	}
@@ -80,21 +81,44 @@ public class JFrameMain extends JFrame {
 		panel2.add(panelButton);
 	}
 
+	public void addPanelRegisterProduct(ActionListener actionListener) {
+		panel2.removeAll();
+		JPRegisterProduct registerProduct = new JPRegisterProduct(actionListener);
+		panel2.setBorder(new EmptyBorder(0, 0, 0, 1));
+		panel2.add(registerProduct);
+	}
+
 	public void addPanelSells(ActionListener actionListener) {
 		panel2.removeAll();
-		
+
 		JPRallySell panelButton = new JPRallySell(actionListener);
 
-		panel2.setBorder(new EmptyBorder(0, 10, 0, 0));
+		panel2.setBorder(new EmptyBorder(0, 0, 0, 30));
 		panel2.add(panelButton);
-		
-//		JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_BLUE_PANEL, 30, 30);
-//		JPRegisterSell panelButton = new JPRegisterSell(actionListener);
-//
-//		rounderPanel.add(panelButton);
-//		panel2.setBorder(new EmptyBorder(0, 300, 250, 300));
-//		panel2.add(rounderPanel);
+
 	}
+
+	public void addPanelMenuBar(ActionListener actionListener) {
+		panel2.removeAll();
+
+		JMenuItem panelButton = new JMenuItem(actionListener);
+
+		panel2.setBorder(new EmptyBorder(0, 0, 0, 30));
+		panel2.add(panelButton);
+
+	}
+
+//	public void addPanelChangeName(ActionListener actionListener) {
+//		panel2.removeAll();
+//
+//		JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_BLUE_PANEL, 30, 30);
+//		JPChangeInfor panelButton = new JPChangeInfor(actionListener);
+//
+//		rounderPanel.add(panelButton.labelName(actionListener));
+//		panel2.setBorder(new EmptyBorder(200, 300, 250, 300));
+//		panel2.add(rounderPanel);
+//
+//	}
 
 //
 //	public String getCodeBook() {
@@ -225,23 +249,23 @@ public class JFrameMain extends JFrame {
 //		authorBook.addElementToTable(list);
 //	}
 //	
-//	public void addExcepetionLogIn() {
-//		JOptionPane.showMessageDialog(null, "El usuario o la contraseña estan incorrectos", "Inciar sesión",
-//				JOptionPane.ERROR_MESSAGE);
-//	} 
-//	
-//	public void addExcepetionDelet() {
-//		JOptionPane.showMessageDialog(null, "El codigo del libro es incorrecto", "Descontinuar libro",
-//				JOptionPane.ERROR_MESSAGE);
-//	}
-//	
-//	public void addExcepetionTittle() {
-//		JOptionPane.showMessageDialog(null, "El titulo del libro esta incorrecto", "Titulo libro",
-//				JOptionPane.ERROR_MESSAGE);
-//	}
-//	
-//	public void addExcepetionAuthor() {
-//		JOptionPane.showMessageDialog(null, "El autor del libro esta incorrecto", "Nombre Autor libro",
-//				JOptionPane.ERROR_MESSAGE);
-//	}
+	public void addExcepetionLogIn() {
+		JOptionPane.showMessageDialog(null, "El usuario o la contraseña estan incorrectos", "Inciar sesión",
+				JOptionPane.ERROR_MESSAGE);
+	}
+
+	public void addExcepetionValInt() {
+		JOptionPane.showMessageDialog(null, "Ingrese solamente valores numéricos", "Registrar datos",
+				JOptionPane.ERROR_MESSAGE);
+	}
+
+	public void addExcepetionValNeg() {
+		JOptionPane.showMessageDialog(null, "Ingrese solamente valores mayores o iguales a cero", "Registrar datos",
+				JOptionPane.ERROR_MESSAGE);
+	}
+
+	public void addExcepetionValObli() {
+		JOptionPane.showMessageDialog(null, "Ingrese todos los datos en los campos obligatorios", "Registrar datos",
+				JOptionPane.ERROR_MESSAGE);
+	}
 }
