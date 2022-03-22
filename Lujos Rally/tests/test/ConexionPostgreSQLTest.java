@@ -45,20 +45,21 @@ public class ConexionPostgreSQLTest {
 			pssql.registerSale("nombre_1", 4, 100, 2);
 			 */
 			
-			/*
-			System.out.println(pssql.validateStock("product_3", "carro_3", "", "referencia_2", "feature_3", ""));
-			*/
+
+			System.out.println(pssql.validateStock("p1", "carro_2", "", "", "", ""));
+			
 			
 			/*
 			pssql.updateStockValue(11, 999);
 			*/
 			
+			/*
 			JoinData join = new JoinData();
 			String[] data = join.JoinFeatureStock(pssql.getStock());
 			for(String i: data){
 				System.out.println(i);
 			}
-			
+			*/
 
 		} catch (SQLException e) {
 			e.printStackTrace();
