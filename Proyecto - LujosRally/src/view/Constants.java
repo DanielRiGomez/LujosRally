@@ -6,7 +6,7 @@ import java.awt.Font;
 public class Constants {
 
 	public static final String[] TABLE_PRODUCTS = { "Código Producto", "Nombre Producto", "Tipo de Carro", "Marca",
-			"Referencias", "Características", "Descripción", "Unidades en Stock", "Valor sugerido" };
+			"Referencias", "Características", "Descripción", "Unidades en Stock", "Valor Unidad" };
 	public static final String[] TABLE_SELLS = {"Nombre Producto", "Fecha de venta",
 			"Unidades vendidas", "Valor de la venta", "Código del producto" };
 
@@ -19,7 +19,7 @@ public class Constants {
 	public static final String TEXT_USER_PASSWORD = "Contrase�a (*)";
 	public static final String TEXT_USER_CON_PASSWORD = "Confirmar contrase�a (*) ";
 	public static final String TEXT_PRODUCT_NAME = "Nombre del producto (*)";
-	public static final String TEXT_PRODUCT_TYPE_CAR = "<html><justify>Seleccione el tipo de carro<br> al que pertenece (*)</html> ";
+	public static final String TEXT_PRODUCT_TYPE_CAR = "<html><justify>Seleccione el tipo de carro<br> al que pertenece</html> ";
 	public static final String TEXT_PRODUCT_MARK = "<html><justify>Seleccione la marca del<br> producto </html> ";
 	public static final String TEXT_PRODUCT_REFERENCE = "Referencia";
 	public static final String TEXT_PRODUCT_DESCRIPTION = "Descripci�n";
@@ -28,9 +28,9 @@ public class Constants {
 	public static final String TEXT_PRICE = "Precio (*)";
 	public static final String TEXT_SUCESS = "<html><center>�Su registro se ha realizado de <br> forma exitosa! </html>";
 	public static final String TEXT_SELL_DATE = "Fecha de venta:    ";
-	public static final String TEXT_SELL_ID = "Identificaci�n del producto";
+	public static final String TEXT_SELL_ID = "Identificaci�n del producto(*)";
 	public static final String TEXT_SELL_UNIT = "Unidades vendidas (*)";
-	public static final String TEXT_SELL_NAME = "Nombre del producto (*)";
+	public static final String TEXT_SELL_NAME = "Nombre del producto";
 	public static final String TEXT_SELL_total = "Precio total (*)";
 	public static final String TEXT_EDI_INFOR = "Editar informaci�n";
 

@@ -3,6 +3,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.UnknownHostException;
 import java.nio.file.WatchService;
 import java.sql.SQLException;
@@ -82,25 +83,32 @@ public class ClientAdmin implements ActionListener {
 		case Constants.BUTTON_REGISTER_PRODUC:
 
 			try {
-				String[] a = {(((JPRegisterProduct) frameMain.getActualPanel()).getProductName()),
-						(((JPRegisterProduct) frameMain.getActualPanel()).getCar()),
-						(((JPRegisterProduct) frameMain.getActualPanel()).getMarca()),
-						(((JPRegisterProduct) frameMain.getActualPanel()).getReferencia()),
-						(((JPRegisterProduct) frameMain.getActualPanel()).getFeature()),
-						(((JPRegisterProduct) frameMain.getActualPanel()).getDescripcion())};
-				if (services.validateStock(a[0], a[1], a[2], a[3], a[4], a[5])) {
-					frameMain.addExcepetionRegisterStock();
-				} else {
-					services.registerObject((((JPRegisterProduct) frameMain.getActualPanel()).getProductName()),
+				if((((JPRegisterProduct) frameMain.getActualPanel()).getProductName()).equals("") || 
+						(((JPRegisterProduct) frameMain.getActualPanel()).getUnit()).equals("") ||
+						(((JPRegisterProduct) frameMain.getActualPanel()).getValue()).equals("")) {
+					frameMain.addExcepetionCasillaObligatoria();
+				}else {
+					String[] a = {(((JPRegisterProduct) frameMain.getActualPanel()).getProductName()),
 							(((JPRegisterProduct) frameMain.getActualPanel()).getCar()),
 							(((JPRegisterProduct) frameMain.getActualPanel()).getMarca()),
 							(((JPRegisterProduct) frameMain.getActualPanel()).getReferencia()),
 							(((JPRegisterProduct) frameMain.getActualPanel()).getFeature()),
-							(((JPRegisterProduct) frameMain.getActualPanel()).getDescripcion()),
-							((JPRegisterProduct) frameMain.getActualPanel()).getUnit(),
-							((JPRegisterProduct) frameMain.getActualPanel()).getValue());
-					frameMain.addPanelStart(this);
+							(((JPRegisterProduct) frameMain.getActualPanel()).getDescripcion())};
+					if (services.validateStock(a[0], a[1], a[2], a[3], a[4], a[5])) {
+						frameMain.addExcepetionRegisterStock();
+					} else {
+						services.registerObject((((JPRegisterProduct) frameMain.getActualPanel()).getProductName()),
+								(((JPRegisterProduct) frameMain.getActualPanel()).getCar()),
+								(((JPRegisterProduct) frameMain.getActualPanel()).getMarca()),
+								(((JPRegisterProduct) frameMain.getActualPanel()).getReferencia()),
+								(((JPRegisterProduct) frameMain.getActualPanel()).getFeature()),
+								(((JPRegisterProduct) frameMain.getActualPanel()).getDescripcion()),
+								((JPRegisterProduct) frameMain.getActualPanel()).getUnit(),
+								((JPRegisterProduct) frameMain.getActualPanel()).getValue());
+						frameMain.addPanelStart(this);
+					}
 				}
+				
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
@@ -125,19 +133,24 @@ public class ClientAdmin implements ActionListener {
 		case Constants.BUTTON_REGISTER_SELL:
 			frameMain.revalidate();
 			try {
-				
-				if((Integer.parseInt(services.getStockUnits((((JPRegisterSell) frameMain.getActualPanel()).getIdProduct()))) - Integer.parseInt(((JPRegisterSell) frameMain.getActualPanel()).getSellUnit())) >= 0) {
-					
-					services.registerSale((((JPRegisterSell) frameMain.getActualPanel()).getProductName()),
-							(((JPRegisterSell) frameMain.getActualPanel()).getSellUnit()),
-							(((JPRegisterSell) frameMain.getActualPanel()).getSellTotal()),
-							(((JPRegisterSell) frameMain.getActualPanel()).getIdProduct()));
-					
-					services.updateStockUnits((((JPRegisterSell) frameMain.getActualPanel()).getIdProduct()), 
-							Integer.toString(Integer.parseInt(services.getStockUnits((((JPRegisterSell) frameMain.getActualPanel()).getIdProduct()))) - Integer.parseInt(((JPRegisterSell) frameMain.getActualPanel()).getSellUnit())));
-					frameMain.addPanelStart(this);
+				if((((JPRegisterSell) frameMain.getActualPanel()).getIdProduct()).equals("") || 
+						(((JPRegisterSell) frameMain.getActualPanel()).getSellUnit()).equals("") ||
+						(((JPRegisterSell) frameMain.getActualPanel()).getSellTotal()).equals("")) {
+					frameMain.addExcepetionCasillaObligatoria();
 				}else {
-					frameMain.addExcepetionUnits();
+					if((Integer.parseInt(services.getStockUnits((((JPRegisterSell) frameMain.getActualPanel()).getIdProduct()))) - Integer.parseInt(((JPRegisterSell) frameMain.getActualPanel()).getSellUnit())) >= 0) {
+						
+						services.registerSale((((JPRegisterSell) frameMain.getActualPanel()).getProductName()),
+								(((JPRegisterSell) frameMain.getActualPanel()).getSellUnit()),
+								(((JPRegisterSell) frameMain.getActualPanel()).getSellTotal()),
+								(((JPRegisterSell) frameMain.getActualPanel()).getIdProduct()));
+						
+						services.updateStockUnits((((JPRegisterSell) frameMain.getActualPanel()).getIdProduct()), 
+								Integer.toString(Integer.parseInt(services.getStockUnits((((JPRegisterSell) frameMain.getActualPanel()).getIdProduct()))) - Integer.parseInt(((JPRegisterSell) frameMain.getActualPanel()).getSellUnit())));
+						frameMain.addPanelStart(this);
+					}else {
+						frameMain.addExcepetionUnits();
+					}
 				}
 			} catch (SQLException e1) {
 				e1.printStackTrace();

@@ -309,6 +309,11 @@ public class JFrameMain extends JFrame {
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
+	public void addExcepetionCasillaObligatoria() {
+		JOptionPane.showMessageDialog(null, "Se deben llenar todos los campos obligatorios", "Inciar sesi�n",
+				JOptionPane.ERROR_MESSAGE);
+	}
+	
 	public void addExcepetionRegisterUser() {
 		JOptionPane.showMessageDialog(null, "El usuario ya existe", "Inciar sesi�n", JOptionPane.ERROR_MESSAGE);
 	}

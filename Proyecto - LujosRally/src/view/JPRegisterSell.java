@@ -77,7 +77,7 @@ public class JPRegisterSell extends JPanel {
 
 		JLWindow emailText = new JLWindow(Constants.TEXT_SELL_ID, Constants.FONT_NUNITO, Color.BLACK,
 				Constants.COLOR_BLUE_PANEL2);
-		emailText.setBorder(new EmptyBorder(0, 0, 0, 50));
+		emailText.setBorder(new EmptyBorder(0, 0, 0, 20));
 
 		idProduct = new JTextField(20);
 		idProduct.setFont(Constants.FONT_NUNITO_TEXT);
@@ -95,7 +95,7 @@ public class JPRegisterSell extends JPanel {
 
 		JLWindow passText = new JLWindow(Constants.TEXT_SELL_NAME, Constants.FONT_NUNITO, Color.BLACK,
 				Constants.COLOR_BLUE_PANEL2);
-		passText.setBorder(new EmptyBorder(0, 0, 0, 87));
+		passText.setBorder(new EmptyBorder(0, 0, 0, 115));
 
 		productName = new JTextField(20);
 		productName.setFont(Constants.FONT_NUNITO_TEXT);

@@ -18,8 +18,7 @@ public class JPRegisterProduct extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 	
-	private JTextField productName, unit, value, referencia, descripcion, feature;
-	private JComboBox car, marca;
+	private JTextField productName, unit, value, referencia, descripcion, feature, car, marca;
 	
 	public JPRegisterProduct(ActionListener listener) {
 		setOpaque(false);
@@ -137,11 +136,13 @@ public class JPRegisterProduct extends JPanel{
 		text.setBackground(Constants.COLOR_BLUE_BACKGROUND);
 		JLabel jLabel = new JLabel(Constants.TEXT_PRODUCT_TYPE_CAR);
 		jLabel.setFont(Constants.FONT_NUNITO);
-		jLabel.setBorder(new EmptyBorder(0, 0, 0, 180));
+		jLabel.setBorder(new EmptyBorder(0, 0, 0, 60));
 		
-		JComboBox<String> comboBox = new JComboBox<String>();
+		JTextField comboBox = new JTextField();
 		comboBox.setFont(Constants.FONT_NUNITO_TEXT);
-		comboBox.setPreferredSize(new Dimension(230,50));
+		comboBox.setPreferredSize(new Dimension(350,100));
+		TextPrompt placeholder = new TextPrompt(Constants.TEXT_REGISTER_TEXT, comboBox);
+		placeholder.changeAlpha(0.75f);
 		
 		car = comboBox;
 		
@@ -155,11 +156,13 @@ public class JPRegisterProduct extends JPanel{
 		text.setBackground(Constants.COLOR_BLUE_BACKGROUND);
 		JLabel jLabel = new JLabel(Constants.TEXT_PRODUCT_MARK);
 		jLabel.setFont(Constants.FONT_NUNITO);
-		jLabel.setBorder(new EmptyBorder(0, 0, 0, 210));
+		jLabel.setBorder(new EmptyBorder(0, 0, 0, 100));
 		
-		JComboBox<String> comboBox = new JComboBox<String>();
+		JTextField comboBox = new JTextField();
 		comboBox.setFont(Constants.FONT_NUNITO_TEXT);
-		comboBox.setPreferredSize(new Dimension(230,50));
+		comboBox.setPreferredSize(new Dimension(350,100));
+		TextPrompt placeholder = new TextPrompt(Constants.TEXT_REGISTER_TEXT, comboBox);
+		placeholder.changeAlpha(0.75f);
 		
 		marca = comboBox;
 		
@@ -271,11 +274,11 @@ public class JPRegisterProduct extends JPanel{
 	}
 
 	public String getCar() {
-		return (String) car.getSelectedItem();
+		return (String) car.getText();
 	}
 
 	public String getMarca() {
-		return (String) marca.getSelectedItem();
+		return (String) marca.getText();
 	}
 	
 	
