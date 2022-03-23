@@ -29,12 +29,12 @@ public class JPRallySell extends JPanel {
 		panel.setOpaque(false);
 
 		JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_BLUE_PANEL, 30, 30);
-		panel.setBorder(new EmptyBorder(200, 150, 350, 0));
+		rounderPanel.setBorder(new EmptyBorder(30, 40, 30, 40));
 		JPRegisterSell image = new JPRegisterSell(listener);
 		
 		rounderPanel.add(image);
 		
-		panel.setBorder(new EmptyBorder(150, 200, 250, 300));
+		panel.setBorder(new EmptyBorder(100, 250, 250, 300));
 		
 		panel1 = image;
 		panel.add(rounderPanel);

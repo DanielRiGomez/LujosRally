@@ -13,7 +13,7 @@ public class Constants {
 	public static final String TEXT_WINDOW = "Lujos Rally Yopal";
 	public static final String TEXT_REGISTER = "<html><center>Bienvenido al registro de usuario de <br> Lujos Rally<html>";
 	public static final String TEXT_REGISTER_SELL = "<html><center>Registrar ventas<html>";
-	public static final String TEXT_CONDITION = "<html><justify>Ingrese los datos solicitados,recuerte que el s�mbolo (*) asterisco <br> corresponde a campos obligatorios.</html>";
+	public static final String TEXT_CONDITION = "<html><justify>El s�mbolo (*) asterisco corresponde a campos obligatorios.</html>";
 	public static final String TEXT_USER_NAME = "Nombre del usuario (*)";
 	public static final String TEXT_USER_EMAIL = "Correo ";
 	public static final String TEXT_USER_PASSWORD = "Contrase�a (*)";

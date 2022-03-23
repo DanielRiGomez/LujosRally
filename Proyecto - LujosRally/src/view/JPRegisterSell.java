@@ -27,7 +27,6 @@ public class JPRegisterSell extends JPanel {
 		add(labelText());
 		add(addSellDate());
 		add(addSellId());
-		add(addSellName());
 		add(addSellUnit());
 		add(addSellTotal());
 		add(addButton(listener));
@@ -65,6 +64,7 @@ public class JPRegisterSell extends JPanel {
 
 		JLWindow dateText = new JLWindow(new SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime()),
 				Constants.FONT_NUNITO, Color.BLACK, Constants.COLOR_BLUE_PANEL2);
+		panel.setBorder(new EmptyBorder(15, 0, 0, 0));
 
 		panel.add(nameText);
 		panel.add(dateText);
@@ -78,6 +78,7 @@ public class JPRegisterSell extends JPanel {
 		JLWindow emailText = new JLWindow(Constants.TEXT_SELL_ID, Constants.FONT_NUNITO, Color.BLACK,
 				Constants.COLOR_BLUE_PANEL2);
 		emailText.setBorder(new EmptyBorder(0, 0, 0, 20));
+		panel.setBorder(new EmptyBorder(15, 0, 0, 0));
 
 		idProduct = new JTextField(20);
 		idProduct.setFont(Constants.FONT_NUNITO_TEXT);
@@ -89,24 +90,6 @@ public class JPRegisterSell extends JPanel {
 		return panel;
 	}
 
-	public JPanel addSellName() {
-		JPanel panel = new JPanel();
-		panel.setOpaque(false);
-
-		JLWindow passText = new JLWindow(Constants.TEXT_SELL_NAME, Constants.FONT_NUNITO, Color.BLACK,
-				Constants.COLOR_BLUE_PANEL2);
-		passText.setBorder(new EmptyBorder(0, 0, 0, 115));
-
-		productName = new JTextField(20);
-		productName.setFont(Constants.FONT_NUNITO_TEXT);
-		productName.setBackground(Color.white);
-
-		
-		panel.add(passText);
-		panel.add(productName);
-		return panel;
-	}
-
 	public JPanel addSellUnit() {
 		JPanel panel = new JPanel();
 		panel.setOpaque(false);
@@ -114,6 +97,7 @@ public class JPRegisterSell extends JPanel {
 		JLWindow conPassText = new JLWindow(Constants.TEXT_SELL_UNIT, Constants.FONT_NUNITO, Color.BLACK,
 				Constants.COLOR_BLUE_PANEL2);
 		conPassText.setBorder(new EmptyBorder(0, 0, 0, 105));
+		panel.setBorder(new EmptyBorder(15, 0, 0, 0));
 
 		sellUnit = new JTextField(20);
 		sellUnit.setFont(Constants.FONT_NUNITO_TEXT);
@@ -131,6 +115,7 @@ public class JPRegisterSell extends JPanel {
 		JLWindow conPassText = new JLWindow(Constants.TEXT_SELL_total, Constants.FONT_NUNITO, Color.BLACK,
 				Constants.COLOR_BLUE_PANEL2);
 		conPassText.setBorder(new EmptyBorder(0, 0, 0, 200));
+		panel.setBorder(new EmptyBorder(15, 0, 15, 0));
 
 		sellTotal = new JTextField(20);
 		sellTotal.setFont(Constants.FONT_NUNITO_TEXT);

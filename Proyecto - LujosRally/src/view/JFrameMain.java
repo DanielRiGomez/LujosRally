@@ -41,7 +41,8 @@ public class JFrameMain extends JFrame {
 	private void initComponents(ActionListener listener) {
 		getContentPane().removeAll();
 		panel2.setLayout(new BorderLayout());
-		addPanelAdmin(listener);
+//		addPanelAdmin(listener);
+		addPanelSells(listener);
 		add(panel2);
 
 	}
@@ -66,7 +67,7 @@ public class JFrameMain extends JFrame {
 		actuaPanel = panelButton;
 
 		rounderPanel.add(panelButton);
-		panel2.setBorder(new EmptyBorder(80, 250, 80, 200));
+		panel2.setBorder(new EmptyBorder(80, 250, 200, 200));
 		panel2.add(rounderPanel);
 	}
 
