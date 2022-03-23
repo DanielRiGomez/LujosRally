@@ -1,15 +1,15 @@
-INSERT INTO users (nombre_user, password_user) VALUES ('Daneil Gomez','13');
-INSERT INTO users (nombre_user, password_user) VALUES ('Gomez gonzalez','21');
-INSERT INTO users (nombre_user, password_user) VALUES ('Daneil','12');
-INSERT INTO users (nombre_user, password_user) VALUES ('Gomez','13');
+INSERT INTO users (nombre_user, password_user) VALUES ('daniel','123');
 
-INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('product_1','carro_1', 'marca_1', 'referencia_1', 'feature_1', '', 4, 100);
-INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('product_2','carro_2', 'marca_2', '', 'feature_1', 'descripcion_1', 4, 100);
-INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('product_3','carro_3', '', 'referencia_2', 'feature_3', '', 4, 100);
-INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('product_4','carro_2', '', 'referencia_3', 'feature_4', 'descripcion_1', 4, 100);
-INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('product_5','carro_1', 'marca_1', '', '', 'descripcion_1', 4, 100);
-
-INSERT INTO sales (name_product, date_sale, units_sales, valor_venta, id_product) VALUES ('product_1','2022/02/26', 2, 5000, 2);
-INSERT INTO sales (name_product, date_sale, units_sales, valor_venta, id_product) VALUES ('product_2','2022/01/26', 2, 5000, 4);
-INSERT INTO sales (name_product, date_sale, units_sales, valor_venta, id_product) VALUES ('product_1','2022/03/26', 2, 5000, 3);
-INSERT INTO sales (name_product, date_sale, units_sales, valor_venta, id_product) VALUES ('product_2','2022/04/26', 2, 5000, 2);
+INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('espejos','optra', 'chevrolet', '', 'electrico', 'externa', 5, 148000);
+INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('espejos','spark gt', 'chevrolet', '', 'electrico', 'externa', 3, 299000);
+INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('espejos','corsa', 'chevrolet', '', 'electrico', 'externa', 5, 148000);
+INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('espejos','logan', 'renault', '', 'electrico', 'fija', 3, 88000);
+INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('stop','d max', 'chevrolet', '2005', '', '', 7, 40000);
+INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('stop','d max', 'chevrolet', '', 'cristal', '', 5, 85000);
+INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('stop','sprint', 'chevrolet', '2181907', '', '', 4, 75000);
+INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('manijas', 'corsa', 'chevrolet', '', 'delantera', 'externa', 10, 48000);
+INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('manijas', 'corsa', 'chevrolet', '', 'trasera', 'externa', 8, 48000);
+INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('manijas', 'aveo emotion', 'chevrolet', 'mip-370', '', 'interna', 4, 55000);
+INSERT INTO stock (name_product, tipo_carro, marca, referencia, feature, descripcion, unidades_stock, valor_sugerido) VALUES ('manijas', 'optra', 'chevrolet', 'mip302', '', 'interna', 4, 55000);
+	
+INSERT INTO sales (name_product, date_sale, units_sales, valor_venta, id_product) VALUES ('manijas','2022/02/26', 1, 55000, 2);

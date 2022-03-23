@@ -7,14 +7,13 @@ import java.util.Calendar;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 public class JPRegisterSell extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JTextField productName, sellUnit, sellTotal;
+	private JTextField productName, sellUnit, sellTotal, idProduct;
 
 	public JPRegisterSell(ActionListener listener) {
 		setOpaque(false);
@@ -80,13 +79,13 @@ public class JPRegisterSell extends JPanel {
 				Constants.COLOR_BLUE_PANEL2);
 		emailText.setBorder(new EmptyBorder(0, 0, 0, 50));
 
-		sellUnit = new JTextField(20);
-		sellUnit.setFont(Constants.FONT_NUNITO_TEXT);
-		sellUnit.setBackground(Color.white);
+		idProduct = new JTextField(20);
+		idProduct.setFont(Constants.FONT_NUNITO_TEXT);
+		idProduct.setBackground(Color.white);
 
-		productName = sellUnit;
+		productName = idProduct;
 		panel.add(emailText);
-		panel.add(sellUnit);
+		panel.add(idProduct);
 		return panel;
 	}
 
@@ -98,7 +97,7 @@ public class JPRegisterSell extends JPanel {
 				Constants.COLOR_BLUE_PANEL2);
 		passText.setBorder(new EmptyBorder(0, 0, 0, 87));
 
-		productName = new JPasswordField(20);
+		productName = new JTextField(20);
 		productName.setFont(Constants.FONT_NUNITO_TEXT);
 		productName.setBackground(Color.white);
 
@@ -116,7 +115,7 @@ public class JPRegisterSell extends JPanel {
 				Constants.COLOR_BLUE_PANEL2);
 		conPassText.setBorder(new EmptyBorder(0, 0, 0, 105));
 
-		sellUnit = new JPasswordField(20);
+		sellUnit = new JTextField(20);
 		sellUnit.setFont(Constants.FONT_NUNITO_TEXT);
 		sellUnit.setBackground(Color.white);
 
@@ -133,7 +132,7 @@ public class JPRegisterSell extends JPanel {
 				Constants.COLOR_BLUE_PANEL2);
 		conPassText.setBorder(new EmptyBorder(0, 0, 0, 200));
 
-		sellTotal = new JPasswordField(20);
+		sellTotal = new JTextField(20);
 		sellTotal.setFont(Constants.FONT_NUNITO_TEXT);
 		sellTotal.setBackground(Color.white);
 
@@ -171,5 +170,11 @@ public class JPRegisterSell extends JPanel {
 	public String getSellTotal() {
 		return sellTotal.getText();
 	}
+
+	public String getIdProduct() {
+		return idProduct.getText();
+	}
+	
+	
 
 }

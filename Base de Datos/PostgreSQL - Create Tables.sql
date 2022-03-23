@@ -7,7 +7,7 @@ CREATE TABLE users (
 CREATE TABLE stock (
     id_product        SERIAL         PRIMARY KEY,
     name_product      VARCHAR(40)    NOT NULL,
-    tipo_carro        VARCHAR(20)    NOT NULL,
+    tipo_carro        VARCHAR(20)    ,
     marca             VARCHAR(20)    ,
     referencia        VARCHAR(20)    ,
     feature           VARCHAR(30)    ,

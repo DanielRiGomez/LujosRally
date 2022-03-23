@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 public class JMenuOption extends JPanel {
 
@@ -108,10 +109,6 @@ public class JMenuOption extends JPanel {
 		JPanel panel = new JPanel();
 		panel.setBackground(Constants.COLOR_BLUE_LOG);
 		JMenuItem ini = new JMenuItem(listener);
-//		JButtonInformation ini = new JButtonInformation(10, 10, Constants.BUTTON_EDI_INFOR, Constants.ICON_EDIT, 60, 60,
-//				Constants.COLOR_BLUE_PANEL2, Color.black, Constants.FONT_NUNITO);
-//		ini.setActionCommand(Constants.BUTTON_EDI_INFOR);
-//		ini.addActionListener(listener);
 		panel.add(ini);
 
 		return panel;

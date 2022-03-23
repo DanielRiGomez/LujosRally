@@ -18,10 +18,14 @@ public class JFrameMain extends JFrame {
 	private static final int HEIGHT = 1000;
 	private JPanel panel2;
 	private JPanel actuaPanel;
+	private PanelTableProducts products;
+	private PanelTableSells sells;
 
 	public JFrameMain(ActionListener listener) {
 		panel2 = new JPPrincipal();
 		actuaPanel = new JPanel();
+		products = new PanelTableProducts();
+		sells = new PanelTableSells();
 
 		setTitle(Constants.TEXT_WINDOW);
 		setSize(new Dimension(WIDTH, HEIGHT));
@@ -38,7 +42,6 @@ public class JFrameMain extends JFrame {
 		getContentPane().removeAll();
 		panel2.setLayout(new BorderLayout());
 		addPanelAdmin(listener);
-//		addPanelChangeName(listener);
 		add(panel2);
 
 	}
@@ -49,7 +52,7 @@ public class JFrameMain extends JFrame {
 		JPLogIn panelButton = new JPLogIn(actionListener);
 
 		actuaPanel = panelButton;
-		
+
 		rounderPanel.add(panelButton);
 		panel2.setBorder(new EmptyBorder(150, 250, 190, 200));
 		panel2.add(rounderPanel);
@@ -61,7 +64,7 @@ public class JFrameMain extends JFrame {
 		JPRegisterUser panelButton = new JPRegisterUser(actionListener);
 
 		actuaPanel = panelButton;
-		
+
 		rounderPanel.add(panelButton);
 		panel2.setBorder(new EmptyBorder(80, 250, 80, 200));
 		panel2.add(rounderPanel);
@@ -90,9 +93,9 @@ public class JFrameMain extends JFrame {
 	public void addPanelRegisterProduct(ActionListener actionListener) {
 		panel2.removeAll();
 		JPRegisterProduct registerProduct = new JPRegisterProduct(actionListener);
-		
+
 		actuaPanel = registerProduct;
-		
+
 		panel2.setBorder(new EmptyBorder(0, 0, 0, 1));
 		panel2.add(registerProduct);
 	}
@@ -103,9 +106,9 @@ public class JFrameMain extends JFrame {
 		JPRallySell panelButton = new JPRallySell(actionListener);
 
 		panel2.setBorder(new EmptyBorder(0, 0, 0, 30));
-		
+
 		actuaPanel = panelButton.getPanel1();
-		
+
 		panel2.add(panelButton);
 
 	}
@@ -120,6 +123,41 @@ public class JFrameMain extends JFrame {
 
 	}
 
+	public void addTableProducts(ActionListener actionListener, Object[][] data) {
+		panel2.removeAll();
+
+		JPRallyTableProducts panelButton = new JPRallyTableProducts(actionListener, data);
+
+		panel2.setBorder(new EmptyBorder(0, 0, 0, 30));
+
+		actuaPanel = panelButton.getPanel1();
+		panel2.add(panelButton);
+		panel2.updateUI();
+	}
+
+	public void addTableSellProducts(ActionListener actionListener, Object[][] data) {
+		panel2.removeAll();
+
+		JPRallyTableSellProducts panelButton = new JPRallyTableSellProducts(actionListener, data);
+
+		panel2.setBorder(new EmptyBorder(0, 0, 0, 30));
+
+		actuaPanel = panelButton.getPanel1();
+		panel2.add(panelButton);
+		panel2.updateUI();
+	}
+
+	public void addElementToTableProducts(Object[] vector) {
+		products.addElementToTable(vector);
+	}
+
+	public void addElementToTableSells(Object[] vector) {
+		sells.addElementToTable(vector);
+	}
+
+	public void addData(Object[][] data) {
+		products.addData(data);
+	}
 //	public void addPanelChangeName(ActionListener actionListener) {
 //		panel2.removeAll();
 //
@@ -265,23 +303,25 @@ public class JFrameMain extends JFrame {
 		JOptionPane.showMessageDialog(null, "El usuario o la contrase�a estan incorrectos", "Inciar sesi�n",
 				JOptionPane.ERROR_MESSAGE);
 	}
-	
-	public void addExcepetionRegisterUser() {
-		JOptionPane.showMessageDialog(null, "El usuario ya existe", "Inciar sesi�n",
+
+	public void addExcepetionUnits() {
+		JOptionPane.showMessageDialog(null, "Las unidades vendiadas superan la cantidad en stock", "Inciar sesi�n",
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
+	public void addExcepetionRegisterUser() {
+		JOptionPane.showMessageDialog(null, "El usuario ya existe", "Inciar sesi�n", JOptionPane.ERROR_MESSAGE);
+	}
+
 	public void addExcepetionRegisterStock() {
 		JOptionPane.showMessageDialog(null, "El producto ya existe en el inventario", "Inciar sesi�n",
 				JOptionPane.ERROR_MESSAGE);
 	}
 
-
 	public void addExcepetionRepetPassword() {
-		JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Inciar sesi�n",
-				JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Inciar sesi�n", JOptionPane.ERROR_MESSAGE);
 	}
-	
+
 	public void addExcepetionValInt() {
 		JOptionPane.showMessageDialog(null, "Ingrese solamente valores num�ricos", "Registrar datos",
 				JOptionPane.ERROR_MESSAGE);
@@ -296,7 +336,7 @@ public class JFrameMain extends JFrame {
 		JOptionPane.showMessageDialog(null, "Ingrese todos los datos en los campos obligatorios", "Registrar datos",
 				JOptionPane.ERROR_MESSAGE);
 	}
-	
+
 	public JPanel getActualPanel() {
 		return actuaPanel;
 	}
