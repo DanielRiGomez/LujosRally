@@ -12,6 +12,7 @@ import java.util.Iterator;
 
 import microservices.ConexionPostgreSQL;
 import view.JFrameMain;
+import view.JPChangeInfor;
 import view.JPLogIn;
 import view.JPRegisterProduct;
 import view.JPRegisterSell;
@@ -198,35 +199,179 @@ public class ClientAdmin implements ActionListener {
 			frameMain.revalidate();
 			break;
 		case Constants.BUTTON_ED_NAME:
-			frameMain.addPanelStart(this);
+			try {
+				if(frameMain.getChangeInfor().getIdPro().equals("") || frameMain.getChangeInfor().getAName().equals("")) {
+					frameMain.addExcepetionCasillaObligatoria();
+				}else {
+					if(isNumeric(frameMain.getChangeInfor().getIdPro())) {
+						if(!services.getStockUnits(frameMain.getChangeInfor().getIdPro()).equals("")) {
+							
+							services.updateStockName(frameMain.getChangeInfor().getIdPro(), frameMain.getChangeInfor().getAName());
+							frameMain.addPanelStart(this);
+						}else {
+							frameMain.addExcepetionId();
+						}
+					}else {
+						frameMain.addExcepetionValId();
+					}
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			frameMain.revalidate();
 			break;
 		case Constants.BUTTON_ED_QUAN:
-			frameMain.addPanelStart(this);
+			try {
+				if(frameMain.getChangeInfor().getIdPro().equals("") || frameMain.getChangeInfor().getAUnit().equals("")) {
+					frameMain.addExcepetionCasillaObligatoria();
+				}else {
+					if(isNumeric(frameMain.getChangeInfor().getIdPro()) && isNumeric(frameMain.getChangeInfor().getAUnit())) {
+						if(!services.getStockUnits(frameMain.getChangeInfor().getIdPro()).equals("")) {
+							
+							services.updateStockUnits(frameMain.getChangeInfor().getIdPro(), frameMain.getChangeInfor().getAUnit());
+							frameMain.addPanelStart(this);
+						}else {
+							frameMain.addExcepetionId();
+						}
+					}else {
+						frameMain.addExcepetionVal();
+					}
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			frameMain.revalidate();
 			break;
 		case Constants.BUTTON_ED_PRIC:
-			frameMain.addPanelStart(this);
+			try {
+				if(frameMain.getChangeInfor().getIdPro().equals("") || frameMain.getChangeInfor().getAPrice().equals("")) {
+					frameMain.addExcepetionCasillaObligatoria();
+				}else {
+					if(isNumeric(frameMain.getChangeInfor().getIdPro()) && isNumeric(frameMain.getChangeInfor().getAPrice())) {
+						if(!services.getStockUnits(frameMain.getChangeInfor().getIdPro()).equals("")) {
+							
+							services.updateStockValue(frameMain.getChangeInfor().getIdPro(), frameMain.getChangeInfor().getAPrice());
+							frameMain.addPanelStart(this);
+						}else {
+							frameMain.addExcepetionId();
+						}
+					}else {
+						frameMain.addExcepetionVal();
+					}
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			frameMain.revalidate();
 			break;
 		case Constants.BUTTON_ED_TYPE:
-			frameMain.addPanelStart(this);
+			try {
+				if(frameMain.getChangeInfor().getIdPro().equals("") || frameMain.getChangeInfor().getAType().equals("")) {
+					frameMain.addExcepetionCasillaObligatoria();
+				}else {
+					if(isNumeric(frameMain.getChangeInfor().getIdPro())) {
+						if(!services.getStockUnits(frameMain.getChangeInfor().getIdPro()).equals("")) {
+							
+							services.updateStockCar(frameMain.getChangeInfor().getIdPro(), frameMain.getChangeInfor().getAType());
+							frameMain.addPanelStart(this);
+						}else {
+							frameMain.addExcepetionId();
+						}
+					}else {
+						frameMain.addExcepetionValId();
+					}
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			frameMain.revalidate();
 			break;
 		case Constants.BUTTON_ED_MARC:
-			frameMain.addPanelStart(this);
+			try {
+				if(frameMain.getChangeInfor().getIdPro().equals("") || frameMain.getChangeInfor().getAMarc().equals("")) {
+					frameMain.addExcepetionCasillaObligatoria();
+				}else {
+					if(isNumeric(frameMain.getChangeInfor().getIdPro())) {
+						if(!services.getStockUnits(frameMain.getChangeInfor().getIdPro()).equals("")) {
+							
+							services.updateStockMarca(frameMain.getChangeInfor().getIdPro(), frameMain.getChangeInfor().getAMarc());
+							frameMain.addPanelStart(this);
+						}else {
+							frameMain.addExcepetionId();
+						}
+					}else {
+						frameMain.addExcepetionValId();
+					}
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			frameMain.revalidate();
 			break;
 		case Constants.BUTTON_ED_REFE:
-			frameMain.addPanelStart(this);
+			try {
+				if(frameMain.getChangeInfor().getIdPro().equals("") || frameMain.getChangeInfor().getARef().equals("")) {
+					frameMain.addExcepetionCasillaObligatoria();
+				}else {
+					if(isNumeric(frameMain.getChangeInfor().getIdPro())) {
+						if(!services.getStockUnits(frameMain.getChangeInfor().getIdPro()).equals("")) {
+							
+							services.updateStockReferencia(frameMain.getChangeInfor().getIdPro(), frameMain.getChangeInfor().getARef());
+							frameMain.addPanelStart(this);
+						}else {
+							frameMain.addExcepetionId();
+						}
+					}else {
+						frameMain.addExcepetionValId();
+					}
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			frameMain.revalidate();
 			break;
-		case Constants.BUTTON_ED_DESC:
-			frameMain.addPanelStart(this);
+		case "descripcion":
+			try {
+				if(frameMain.getChangeInfor().getIdPro().equals("") || frameMain.getChangeInfor().getADesc().equals("")) {
+					frameMain.addExcepetionCasillaObligatoria();
+				}else {
+					if(isNumeric(frameMain.getChangeInfor().getIdPro())) {
+						if(!services.getStockUnits(frameMain.getChangeInfor().getIdPro()).equals("")) {
+							
+							services.updateStockDescription(frameMain.getChangeInfor().getIdPro(), frameMain.getChangeInfor().getADesc());
+							frameMain.addPanelStart(this);
+						}else {
+							frameMain.addExcepetionId();
+						}
+					}else {
+						frameMain.addExcepetionValId();
+					}
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			frameMain.revalidate();
 			break;
-		case Constants.BUTTON_ED_CHAR:
-			frameMain.addPanelStart(this);
+		case "Características":
+			try {
+				if(frameMain.getChangeInfor().getIdPro().equals("") || frameMain.getChangeInfor().getAChara().equals("")) {
+					frameMain.addExcepetionCasillaObligatoria();
+				}else {
+					if(isNumeric(frameMain.getChangeInfor().getIdPro())) {
+						if(!services.getStockUnits(frameMain.getChangeInfor().getIdPro()).equals("")) {
+							
+							services.updateStockFeature(frameMain.getChangeInfor().getIdPro(), frameMain.getChangeInfor().getAChara());
+							frameMain.addPanelStart(this);
+						}else {
+							frameMain.addExcepetionId();
+						}
+					}else {
+						frameMain.addExcepetionValId();
+					}
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			frameMain.revalidate();
 			break;
 		case Constants.BUTTON_CLOSE:
@@ -282,5 +427,14 @@ private void manageShowSellProductsEvent() {
 			data[i][4] = services.getSales().get(i)[4];
 		}
 		return data;
+	}
+	
+	public boolean isNumeric(String cadena){
+		try {
+			Integer.parseInt(cadena);
+			return true;
+		} catch (NumberFormatException nfe){
+			return false;
+		}
 	}
 }

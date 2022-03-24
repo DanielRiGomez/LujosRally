@@ -1,7 +1,9 @@
 package test;
 
 import java.sql.SQLException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import microservices.ConexionPostgreSQL;
 import model.JoinData;
@@ -33,6 +35,20 @@ public class ConexionPostgreSQLTest {
 			}
 			*/
 			
+			//Obtener el stock
+			ArrayList<String[]> list =pssql.getStock();
+			for(String[] i: list) {
+				System.out.println(i[0] +" "+ i[1] +" "+ i[2] +" "+ i[3] +" "+ i[4] +" "+ i[5] +" "+ i[6] +" "+ i[7]+" "+ i[8]);
+				
+				String a = i[8].substring(2, i[8].length()-3);
+				String b = a.replace(".","");
+				int c = Integer.parseInt(b);
+				NumberFormat format = NumberFormat.getCurrencyInstance(new Locale("en", "US"));
+				String d = format.format(Integer.parseInt(i[7])*c);
+				System.out.println();
+			}
+		
+			
 			/*
 			pssql.registerUser("Edwin", "12");
 			 */
@@ -46,7 +62,7 @@ public class ConexionPostgreSQLTest {
 			 */
 			
 
-			System.out.println(pssql.validateStock("p1", "carro_2", "", "", "", ""));
+			//System.out.println(pssql.validateStock("p1", "carro_2", "", "", "", ""));
 			
 			
 			/*

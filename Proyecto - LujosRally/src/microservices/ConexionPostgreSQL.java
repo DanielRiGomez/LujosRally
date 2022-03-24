@@ -134,7 +134,7 @@ public class ConexionPostgreSQL {
 		connection.close();
 	}
 
-	public void updateStockRefrencia(String idStock, String referencia) throws SQLException {
+	public void updateStockReferencia(String idStock, String referencia) throws SQLException {
 		initConnection();
 		statement.executeUpdate(
 				"UPDATE stock set referencia = '" + referencia + "' WHERE  id_product = " + idStock + ";");
@@ -165,6 +165,13 @@ public class ConexionPostgreSQL {
 		initConnection();
 		statement.executeUpdate(
 				"UPDATE stock set valor_sugerido = '" + value + "' WHERE  id_product = " + idStock + ";");
+		connection.close();
+	}
+	
+	 public void deleteObject(String idStock) throws SQLException {
+			initConnection();
+		statement.executeUpdate(
+			"DELETE FROM stock WHERE  id_product = " + idStock + ";");
 		connection.close();
 	}
 

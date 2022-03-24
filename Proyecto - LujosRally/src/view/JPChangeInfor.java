@@ -12,8 +12,7 @@ import javax.swing.border.EmptyBorder;
 public class JPChangeInfor extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JTextField idPro, anName, aUnit, aPrice,  aType,  aMarc,  aReferen,
-			 aDescrip, aChara;
+	private JTextField idPro, anName, aUnit, aPrice,  aType,  aMarc,  aReferen, aDescrip, aChara;
 	private JPanel panel1;
 
 	public JPChangeInfor() {
@@ -292,7 +291,7 @@ public class JPChangeInfor extends JPanel {
 		panel.setOpaque(false);
 		JButtonInformation addBook = new JButtonInformation(10, 10, Constants.BUTTON_ED_DESC, Constants.COLOR_RED,
 				Color.BLACK, Constants.FONT_NUNITO);
-		addBook.setActionCommand(Constants.BUTTON_ED_DESC);
+		addBook.setActionCommand("descripcion");
 		addBook.addActionListener(listener);
 
 		panel.add(addBook);
@@ -305,12 +304,16 @@ public class JPChangeInfor extends JPanel {
 		panel.setOpaque(false);
 		JButtonInformation addBook = new JButtonInformation(10, 10, Constants.BUTTON_ED_CHAR, Constants.COLOR_RED,
 				Color.BLACK, Constants.FONT_NUNITO);
-		addBook.setActionCommand(Constants.BUTTON_ED_CHAR);
+		addBook.setActionCommand("Características");
 		addBook.addActionListener(listener);
 
 		panel.add(addBook);
 		panel.add(addButtGeneral(listener));
 		return panel;
+	}
+	
+	public String getIdPro() {
+		return idPro.getText();
 	}
 
 	public String getAName() {

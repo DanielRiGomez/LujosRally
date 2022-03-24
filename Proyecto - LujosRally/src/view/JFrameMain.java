@@ -251,30 +251,39 @@ public class JFrameMain extends JFrame {
 	}
 
 	public void addExcepetionUnits() {
-		JOptionPane.showMessageDialog(null, "Las unidades vendiadas superan la cantidad en stock", "Inciar sesi�n",
+		JOptionPane.showMessageDialog(null, "Las unidades vendiadas superan la cantidad en stock", "Registrar datos",
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
 	public void addExcepetionCasillaObligatoria() {
-		JOptionPane.showMessageDialog(null, "Se deben llenar todos los campos obligatorios", "Inciar sesi�n",
+		JOptionPane.showMessageDialog(null, "Se deben llenar todos los campos obligatorios", "Registrar datos",
 				JOptionPane.ERROR_MESSAGE);
 	}
 	
 	public void addExcepetionRegisterUser() {
-		JOptionPane.showMessageDialog(null, "El usuario ya existe", "Inciar sesi�n", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, "El usuario ya existe", "Registrar datos", JOptionPane.ERROR_MESSAGE);
 	}
 
 	public void addExcepetionRegisterStock() {
-		JOptionPane.showMessageDialog(null, "El producto ya existe en el inventario", "Inciar sesi�n",
+		JOptionPane.showMessageDialog(null, "El producto ya existe en el inventario", "Registrar datos",
 				JOptionPane.ERROR_MESSAGE);
 	}
 
 	public void addExcepetionRepetPassword() {
-		JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Inciar sesi�n", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Registrar datos", JOptionPane.ERROR_MESSAGE);
+	}
+	
+	public void addExcepetionId() {
+		JOptionPane.showMessageDialog(null, "El codigo no corresponde a ningun producto", "Registrar datos", JOptionPane.ERROR_MESSAGE);
 	}
 
+	public void addExcepetionValId() {
+		JOptionPane.showMessageDialog(null, "El codigo debe ser valores num�ricos", "Registrar datos",
+				JOptionPane.ERROR_MESSAGE);
+	}
+	
 	public void addExcepetionValInt() {
-		JOptionPane.showMessageDialog(null, "Ingrese solamente valores num�ricos", "Registrar datos",
+		JOptionPane.showMessageDialog(null, "Las unidades y el precio deben ser valores numericos", "Registrar datos",
 				JOptionPane.ERROR_MESSAGE);
 	}
 
@@ -283,6 +292,11 @@ public class JFrameMain extends JFrame {
 				JOptionPane.ERROR_MESSAGE);
 	}
 
+	public void addExcepetionVal() {
+		JOptionPane.showMessageDialog(null, "Ingrese solamente valores numericos", "Registrar datos",
+				JOptionPane.ERROR_MESSAGE);
+	}
+	
 	public void addExcepetionValObli() {
 		JOptionPane.showMessageDialog(null, "Ingrese todos los datos en los campos obligatorios", "Registrar datos",
 				JOptionPane.ERROR_MESSAGE);
@@ -291,4 +305,9 @@ public class JFrameMain extends JFrame {
 	public JPanel getActualPanel() {
 		return actuaPanel;
 	}
+
+	public JPChangeInfor getChangeInfor() {
+		return changeInfor;
+	}
+	
 }

@@ -67,7 +67,7 @@ public class Constants {
 	public static final String BUTTON_ED_TYPE = "Guardar Tipo";
 	public static final String BUTTON_ED_MARC = "Guardar Marca";
 	public static final String BUTTON_ED_REFE = "Guardar Referencia";
-	public static final String BUTTON_ED_DESC = "Guardar descripció";
+	public static final String BUTTON_ED_DESC = "Guardar descripcion";
 	public static final String BUTTON_ED_CHAR = "Guardar Características";
 
 	public static final String BUTTON_START = "Inicio                              ";
