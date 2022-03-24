@@ -386,7 +386,12 @@ public class ClientAdmin implements ActionListener {
 			frameMain.setDefaultCloseOperation(0);
 			System.exit(0);
 			frameMain.revalidate();
-			break;		
+			break;	
+		case Constants.BUTTON_CLOSE2:
+			frameMain.setDefaultCloseOperation(0);
+			System.exit(0);
+			frameMain.revalidate();
+			break;	
 	}
 }
 

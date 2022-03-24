@@ -378,6 +378,10 @@ public class JPChangeInfor extends JPanel {
 		return aChara.getText();
 	}
 
+	public String getDelete() {
+		return delete.getText();
+	}
+
 	public JPanel getPanel1() {
 		return panel1;
 	}

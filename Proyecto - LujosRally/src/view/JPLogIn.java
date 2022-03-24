@@ -28,6 +28,7 @@ public class JPLogIn extends JPanel {
 		add(addUser());
 		add(addPassword());
 		add(addButton(listener));
+		add(addButtonClose(listener));
 	}
 
 	private JPanel labelPanel() {
@@ -63,7 +64,7 @@ public class JPLogIn extends JPanel {
 		JPanel panel = new JPanel();
 		panel.setOpaque(false);
 
-		JLWindow passText = new JLWindow("Contraseña", Constants.FONT_NUNITO, Color.BLACK, Constants.COLOR_BLUE_PANEL2);
+		JLWindow passText = new JLWindow("Contraseï¿½a", Constants.FONT_NUNITO, Color.BLACK, Constants.COLOR_BLUE_PANEL2);
 		passText.setBorder(new EmptyBorder(0, 0, 20, 25));
 
 		password = new JPasswordField(15);
@@ -90,6 +91,19 @@ public class JPLogIn extends JPanel {
 
 		panel.add(addBook);
 		panel.add(butLog);
+		return panel;
+	}
+
+	public JPanel addButtonClose(ActionListener listener) {
+		JPanel panel = new JPanel();
+		panel.setOpaque(false);
+		JButtonInformation addBook = new JButtonInformation(10, 10, Constants.BUTTON_CLOSE2, Constants.COLOR_RED,
+				Color.BLACK, Constants.FONT_NUNITO);
+		addBook.setActionCommand(Constants.BUTTON_CLOSE2);
+		addBook.addActionListener(listener);
+		panel.setBorder(new EmptyBorder(50, 300, 160, 300));
+
+		panel.add(addBook);
 		return panel;
 	}
 

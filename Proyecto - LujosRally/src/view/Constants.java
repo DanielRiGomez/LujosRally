@@ -61,6 +61,7 @@ public class Constants {
 	public static final String BUTTON_RETURN_SELL = "Regresar";
 	public static final String BUTTON_RETURN = "Volver";
 	public static final String BUTTON_CLOSE = "Cerrar sesión                   ";
+	public static final String BUTTON_CLOSE2 = "Cerrar sesión";
 
 	public static final String BUTTON_ED_NAME = "Guardar Nombre";
 	public static final String BUTTON_ED_QUAN = "Guardar Cantidad";

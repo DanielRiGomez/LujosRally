@@ -50,6 +50,7 @@ public class Constants {
 	public static final String BUTTON_SEL_PRODUCT = "Venta de producto        ";
 	public static final String BUTTON_SHO_SELLS = "Ver ventas                     ";
 	public static final String BUTTON_CLOSE = "Cerrar sesión                   ";
+	public static final String BUTTON_CLOSE2 = "Cerrar sesión";
 
 	public static final String PostgreSQL_CONNECTION = "jdbc:postgresql://localhost:5432/Lujos Rally?user=postgres&password=123"; 
 }
