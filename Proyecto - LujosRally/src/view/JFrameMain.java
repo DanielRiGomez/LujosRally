@@ -43,9 +43,8 @@ public class JFrameMain extends JFrame {
 		getContentPane().removeAll();
 		panel2.setLayout(new BorderLayout());
 		addPanelAdmin(listener);
-		//addPanelEditChar(listener);
+	//	addTableProducts(listener);
 		add(panel2);
-
 	}
 
 	public void addPanelAdmin(ActionListener actionListener) {
@@ -72,17 +71,6 @@ public class JFrameMain extends JFrame {
 		panel2.add(rounderPanel);
 	}
 
-	public void addPanelSucess(ActionListener actionListener) {
-		panel2.removeAll();
-		JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_BLUE_PANEL, 30, 30);
-		JPRegisterSucess panelButton = new JPRegisterSucess(actionListener);
-
-		rounderPanel.add(panelButton);
-		rounderPanel.add(panelButton);
-		panel2.setBorder(new EmptyBorder(200, 300, 250, 300));
-		panel2.add(rounderPanel);
-	}
-
 	public void addPanelStart(ActionListener actionListener) {
 		panel2.removeAll();
 
@@ -102,28 +90,28 @@ public class JFrameMain extends JFrame {
 		panel2.add(registerProduct);
 	}
 
-	public void addPanelSells(ActionListener actionListener) {
+	public void addPanelRegisterSell(ActionListener actionListener) {
 		panel2.removeAll();
 
-		JPRallySell panelButton = new JPRallySell(actionListener);
+		JPRallySell panelButton = new JPRallySell();
 
 		panel2.setBorder(new EmptyBorder(0, 0, 0, 30));
 
 		actuaPanel = panelButton.getPanel1();
 
-		panel2.add(panelButton);
-
+		panel2.add(panelButton.addPanelRegistrerSell(actionListener));
 	}
 
-	public void addPanelMenuBar(ActionListener actionListener) {
+	public void addPanelSellTotal(ActionListener actionListener) {
 		panel2.removeAll();
 
-		JMenuItem panelButton = new JMenuItem(actionListener);
-
+		JPRallySell panelButton = new JPRallySell();
 		panel2.setBorder(new EmptyBorder(0, 0, 0, 30));
-		panel2.add(panelButton);
+		actuaPanel = panelButton.getPanel1();
 
+		panel2.add(panelButton.addPanelSellTotal(actionListener));
 	}
+
 
 	public void addTableProducts(ActionListener actionListener, Object[][] data) {
 		panel2.removeAll();

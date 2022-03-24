@@ -25,6 +25,7 @@ public class JMenuOption extends JPanel {
 		add(addShowInve(listener));
 		add(addShowSell(listener));
 		add(addEdit(listener));
+		add(addClose(listener));
 	}
 
 	private JPanel labelPanel() {
@@ -82,12 +83,15 @@ public class JMenuOption extends JPanel {
 		JPanel panel = new JPanel();
 		panel.setBackground(Constants.COLOR_BLUE_LOG);
 
-		JButtonInformation ini = new JButtonInformation(10, 10, Constants.BUTTON_SHO_INVENTA, Constants.ICON_INVENT, 60,
+		JMenuInvent ini = new JMenuInvent(listener);
+		panel.add(ini);
+
+	/** 	JButtonInformation ini = new JButtonInformation(10, 10, Constants.BUTTON_SHO_INVENTA, Constants.ICON_INVENT, 60,
 				60, Constants.COLOR_BLUE_PANEL2, Color.black, Constants.FONT_NUNITO);
 		ini.setActionCommand(Constants.BUTTON_SHO_INVENTA);
 		ini.addActionListener(listener);
 		panel.add(ini);
-
+	*/
 		return panel;
 	}
 
@@ -108,6 +112,19 @@ public class JMenuOption extends JPanel {
 		JPanel panel = new JPanel();
 		panel.setBackground(Constants.COLOR_BLUE_LOG);
 		JMenuItem ini = new JMenuItem(listener);
+		panel.add(ini);
+
+		return panel;
+	}
+
+	public JPanel addClose(ActionListener listener) {
+		JPanel panel = new JPanel();
+		panel.setBackground(Constants.COLOR_BLUE_LOG);
+
+		JButtonInformation ini = new JButtonInformation(10, 10, Constants.BUTTON_CLOSE, Constants.ICON_EXIT, 60,
+				60, Constants.COLOR_BLUE_PANEL2, Color.black, Constants.FONT_NUNITO);
+		ini.setActionCommand(Constants.BUTTON_CLOSE);
+		ini.addActionListener(listener);
 		panel.add(ini);
 
 		return panel;

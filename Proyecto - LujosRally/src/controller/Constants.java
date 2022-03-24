@@ -31,6 +31,9 @@ public class Constants {
 	public static final String TEXT_EDI_DESCR = "Editar Descripción del producto";
 	public static final String TEXT_EDI_CHARAC = "Editar Características adicionales del producto";
 
+	public static final String TEXT_SHOW_INVEN = "Ver tabla de inventario";
+	public static final String TEXT_SHOW_TOTAL_PRICE = "Ver costo total de inventario";
+
 	public static final String BUTTON_ED_NAME = "Guardar Nombre";
 	public static final String BUTTON_ED_QUAN = "Guardar Cantidad";
 	public static final String BUTTON_ED_PRIC = "Guardar Precio";
@@ -43,8 +46,8 @@ public class Constants {
 	public static final String BUTTON_START = "Inicio                              ";
 	public static final String BUTTON_REG_PRODUCT = "Registrar Producto       ";
 	public static final String BUTTON_SEL_PRODUCT = "Venta de producto        ";
-	public static final String BUTTON_SHO_INVENTA = "Ver inventario               ";
 	public static final String BUTTON_SHO_SELLS = "Ver ventas                     ";
-	
+	public static final String BUTTON_CLOSE = "Cerrar sesión                   ";
+
 	public static final String PostgreSQL_CONNECTION = "jdbc:postgresql://localhost:5432/Lujos Rally?user=postgres&password=123"; 
 }

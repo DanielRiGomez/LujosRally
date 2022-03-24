@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.event.ActionListener;
+import java.awt.Color;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
@@ -12,16 +13,32 @@ public class JPRallySell extends JPanel {
 	
 	private JPanel panel1;
 
-	public JPRallySell(ActionListener listener) {
+	public JPRallySell() {
 		setVisible(true);
 		setOpaque(false);
-		initComponents(listener);
+	}
+	public JPanel addPanelRegistrerSell(ActionListener actionListener){
+		JPanel panel = new JPanel();
+		panel.setVisible(true);
+		panel.setOpaque(false);
+
+		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		panel.add(new JMenuOption(actionListener));
+		panel.add(labelPanel(actionListener));
+		add(panel);
+		return panel;		
 	}
 
-	private void initComponents(ActionListener actionListener) {
-		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-		add(new JMenuOption(actionListener));
-		add(labelPanel(actionListener));
+	public JPanel addPanelSellTotal(ActionListener actionListener){
+		JPanel panel = new JPanel();
+		panel.setVisible(true);
+		panel.setOpaque(false);
+
+		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		panel.add(new JMenuOption(actionListener));
+		panel.add(addShowTotalSell());
+		add(panel);
+		return panel;		
 	}
 
 	private JPanel labelPanel(ActionListener listener) {
@@ -39,7 +56,27 @@ public class JPRallySell extends JPanel {
 		panel1 = image;
 		panel.add(rounderPanel);
 		
+		add(panel);
+		return panel;
+	}
 
+	private JPanel addShowTotalSell() {
+		JPanel panel = new JPanel();
+		panel.setOpaque(false);
+
+		JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_BLUE_PANEL, 30, 30);
+		rounderPanel.setBorder(new EmptyBorder(30, 40, 30, 40));
+		JLWindow nameText = new JLWindow("Precio total del inventario:  ", Constants.FONT_NUNITO, Color.BLACK,
+				Constants.COLOR_BLUE_PANEL2);
+		JLWindow value = new JLWindow("    Precio total del inventario", Constants.FONT_NUNITO, Color.BLACK,
+				Constants.COLOR_BLUE_PANEL2);
+		
+		rounderPanel.add(nameText);
+		rounderPanel.add(value);
+				
+		panel.add(rounderPanel);
+		panel.setBorder(new EmptyBorder(300, 40, 30, 40));
+		
 		add(panel);
 		return panel;
 	}

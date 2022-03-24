@@ -116,15 +116,18 @@ public class ClientAdmin implements ActionListener {
 			
 			;
 			break;
-		case Constants.BUTTON_SEL_PRODUCT:
-			frameMain.addPanelSells(this);
+	 	case Constants.BUTTON_SEL_PRODUCT:
+			frameMain.addPanelRegisterSell(this);
 			frameMain.revalidate();
-			;
 			break;
-		case Constants.BUTTON_SHO_INVENTA:
+		case Constants.TEXT_SHOW_INVEN:
 			manageShowProductsEvent();
 			frameMain.revalidate();
 			break;
+		case Constants.TEXT_SHOW_TOTAL_PRICE:
+			frameMain.addPanelSellTotal(this);
+			frameMain.revalidate();
+			break;			
 		case Constants.BUTTON_SHO_SELLS:
 			manageShowSellProductsEvent();
 			frameMain.revalidate();
@@ -226,10 +229,15 @@ public class ClientAdmin implements ActionListener {
 			frameMain.addPanelStart(this);
 			frameMain.revalidate();
 			break;
-		}
+		case Constants.BUTTON_CLOSE:
+			frameMain.setDefaultCloseOperation(0);
+			System.exit(0);
+			frameMain.revalidate();
+			break;		
 	}
+}
 
-	private void manageShowSellProductsEvent() {
+private void manageShowSellProductsEvent() {
 		try {
 			frameMain.addTableSellProducts(this, this.addDataSells());
 			frameMain.revalidate();
