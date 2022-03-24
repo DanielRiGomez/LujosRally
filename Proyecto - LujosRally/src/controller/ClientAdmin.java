@@ -159,9 +159,72 @@ public class ClientAdmin implements ActionListener {
 			;
 			break;
 		case Constants.BUTTON_RETURN_SELL:
-			frameMain.revalidate();
 			frameMain.addPanelStart(this);
-			;
+			frameMain.revalidate();
+			break;
+		case Constants.TEXT_EDI_NAME:
+			frameMain.addPanelEditName(this);
+			frameMain.revalidate();
+			break;
+		case Constants.TEXT_EDI_UNIT:
+			frameMain.addPanelEditUnits(this);
+			frameMain.revalidate();
+			break;
+		case Constants.TEXT_EDI_PRICE:
+			frameMain.addPanelEditPrice(this);
+			frameMain.revalidate();
+			break;
+		case Constants.TEXT_EDI_TYCAR:
+			frameMain.addPanelEditType(this);
+			frameMain.revalidate();
+			break;
+		case Constants.TEXT_EDI_MARC:
+			frameMain.addPanelEditMarc(this);
+			frameMain.revalidate();
+			break;
+		case Constants.TEXT_EDI_REF:
+			frameMain.addPanelEditRefe(this);
+			frameMain.revalidate();
+			break;
+		case Constants.TEXT_EDI_DESCR:
+			frameMain.addPanelEditDesc(this);
+			frameMain.revalidate();
+			break;
+		case Constants.TEXT_EDI_CHARAC:
+			frameMain.addPanelEditChar(this);
+			frameMain.revalidate();
+			break;
+		case Constants.BUTTON_ED_NAME:
+			frameMain.addPanelStart(this);
+			frameMain.revalidate();
+			break;
+		case Constants.BUTTON_ED_QUAN:
+			frameMain.addPanelStart(this);
+			frameMain.revalidate();
+			break;
+		case Constants.BUTTON_ED_PRIC:
+			frameMain.addPanelStart(this);
+			frameMain.revalidate();
+			break;
+		case Constants.BUTTON_ED_TYPE:
+			frameMain.addPanelStart(this);
+			frameMain.revalidate();
+			break;
+		case Constants.BUTTON_ED_MARC:
+			frameMain.addPanelStart(this);
+			frameMain.revalidate();
+			break;
+		case Constants.BUTTON_ED_REFE:
+			frameMain.addPanelStart(this);
+			frameMain.revalidate();
+			break;
+		case Constants.BUTTON_ED_DESC:
+			frameMain.addPanelStart(this);
+			frameMain.revalidate();
+			break;
+		case Constants.BUTTON_ED_CHAR:
+			frameMain.addPanelStart(this);
+			frameMain.revalidate();
 			break;
 		}
 	}

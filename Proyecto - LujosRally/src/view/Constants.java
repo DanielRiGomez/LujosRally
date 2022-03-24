@@ -46,8 +46,8 @@ public class Constants {
 	public static final String TEXT_EDI_TYCAR = "Editar Tipo de carro del producto";
 	public static final String TEXT_EDI_MARC = "Editar Marca del producto";
 	public static final String TEXT_EDI_REF = "Editar Referencia del producto";
-	public static final String TEXT_EDI_DESCR = "Editar Descripci�n del producto";
-	public static final String TEXT_EDI_CHARAC = "Editar Caracter�sticas adicionales del producto";
+	public static final String TEXT_EDI_DESCR = "Editar Descripción del producto";
+	public static final String TEXT_EDI_CHARAC = "Editar Características adicionales del producto";
 
 	public static final String BUTTON_LOG_USER = "Ingresar";
 	public static final String BUTTON_REGISTER_USER = "Registrarse";

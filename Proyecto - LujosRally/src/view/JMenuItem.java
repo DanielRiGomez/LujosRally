@@ -57,13 +57,13 @@ public class JMenuItem extends JMenuBar {
 
 		JMenuType report7 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_EDI_DESCR, Constants.FONT_NUNITO,
 				Color.BLACK);
-		report6.setActionCommand(Constants.TEXT_EDI_DESCR);
-		report6.addActionListener(listener);
+		report7.setActionCommand(Constants.TEXT_EDI_DESCR);
+		report7.addActionListener(listener);
 
 		JMenuType report8 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_EDI_CHARAC, Constants.FONT_NUNITO,
 				Color.WHITE);
-		report6.setActionCommand(Constants.TEXT_EDI_CHARAC);
-		report6.addActionListener(listener);
+		report8.setActionCommand(Constants.TEXT_EDI_CHARAC);
+		report8.addActionListener(listener);
 
 		menu.add(report1);
 		menu.add(report2);

@@ -9,7 +9,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 public class JFrameMain extends JFrame {
@@ -20,12 +19,14 @@ public class JFrameMain extends JFrame {
 	private JPanel actuaPanel;
 	private PanelTableProducts products;
 	private PanelTableSells sells;
+	private JPChangeInfor changeInfor;
 
 	public JFrameMain(ActionListener listener) {
 		panel2 = new JPPrincipal();
 		actuaPanel = new JPanel();
 		products = new PanelTableProducts();
 		sells = new PanelTableSells();
+		changeInfor = new JPChangeInfor();
 
 		setTitle(Constants.TEXT_WINDOW);
 		setSize(new Dimension(WIDTH, HEIGHT));
@@ -41,8 +42,8 @@ public class JFrameMain extends JFrame {
 	private void initComponents(ActionListener listener) {
 		getContentPane().removeAll();
 		panel2.setLayout(new BorderLayout());
-//		addPanelAdmin(listener);
-		addPanelSells(listener);
+		addPanelAdmin(listener);
+		//addPanelEditChar(listener);
 		add(panel2);
 
 	}
@@ -148,6 +149,102 @@ public class JFrameMain extends JFrame {
 		panel2.updateUI();
 	}
 
+	public void addPanelEditName(ActionListener actionListener) {
+		panel2.removeAll();
+
+		JPanel changeName = new JPanel();
+		changeName = changeInfor.labelGeneral(changeInfor.addNamePro(), changeInfor.addButtonName(actionListener));
+		JPBGeneral panelButton = new JPBGeneral(150, 0, 0, 0, actionListener, changeName, 100, 50, 100, 100);
+
+		actuaPanel = panelButton.getPanel1();
+
+		panel2.add(panelButton);
+	}
+
+	public void addPanelEditUnits(ActionListener actionListener) {
+		panel2.removeAll();
+
+		JPanel changeName = new JPanel();
+		changeName = changeInfor.labelGeneral(changeInfor.addUnitPro(), changeInfor.addButtonUnit(actionListener));
+		JPBGeneral panelButton = new JPBGeneral(150, 0, 0, 0, actionListener, changeName, 100, 50, 100, 100);
+
+		actuaPanel = panelButton.getPanel1();
+
+		panel2.add(panelButton);
+	}
+
+	public void addPanelEditType(ActionListener actionListener) {
+		panel2.removeAll();
+
+		JPanel changeName = new JPanel();
+		changeName = changeInfor.labelGeneral(changeInfor.addTypePro(), changeInfor.addButtonType(actionListener));
+		JPBGeneral panelButton = new JPBGeneral(150, 0, 0, 0, actionListener, changeName, 100, 50, 100, 100);
+
+		actuaPanel = panelButton.getPanel1();
+
+		panel2.add(panelButton);
+	}
+	
+	public void addPanelEditPrice(ActionListener actionListener) {
+		panel2.removeAll();
+
+		JPanel changeName = new JPanel();
+		changeName = changeInfor.labelGeneral(changeInfor.addPricePro(), changeInfor.addButtonPrice(actionListener));
+		JPBGeneral panelButton = new JPBGeneral(150, 0, 0, 0, actionListener, changeName, 100, 50, 100, 100);
+
+		actuaPanel = panelButton.getPanel1();
+
+		panel2.add(panelButton);
+	}
+
+	public void addPanelEditMarc(ActionListener actionListener) {
+		panel2.removeAll();
+
+		JPanel changeName = new JPanel();
+		changeName = changeInfor.labelGeneral(changeInfor.addMarPro(), changeInfor.addButtonMarc(actionListener));
+		JPBGeneral panelButton = new JPBGeneral(150, 0, 0, 0, actionListener, changeName, 100, 50, 100, 100);
+
+		actuaPanel = panelButton.getPanel1();
+
+		panel2.add(panelButton);
+	}
+
+	public void addPanelEditRefe(ActionListener actionListener) {
+		panel2.removeAll();
+
+		JPanel changeName = new JPanel();
+		changeName = changeInfor.labelGeneral(changeInfor.addRefePro(), changeInfor.addButtonRefe(actionListener));
+		JPBGeneral panelButton = new JPBGeneral(150, 0, 0, 0, actionListener, changeName, 100, 50, 100, 100);
+
+		actuaPanel = panelButton.getPanel1();
+
+		panel2.add(panelButton);
+	}
+
+	public void addPanelEditDesc(ActionListener actionListener) {
+		panel2.removeAll();
+
+		JPanel changeName = new JPanel();
+		changeName = changeInfor.labelGeneral(changeInfor.addDdescPro(), changeInfor.addButtonDesc(actionListener));
+		JPBGeneral panelButton = new JPBGeneral(150, 0, 0, 0, actionListener, changeName, 100, 50, 100, 100);
+
+		actuaPanel = panelButton.getPanel1();
+
+		panel2.add(panelButton);
+	}
+
+	public void addPanelEditChar(ActionListener actionListener) {
+		panel2.removeAll();
+
+		JPanel changeName = new JPanel();
+		changeName = changeInfor.labelGeneral(changeInfor.addCaracPro(), changeInfor.addButtonChar(actionListener));
+		JPBGeneral panelButton = new JPBGeneral(150, 0, 0, 0, actionListener, changeName, 100, 50, 100, 100);
+
+		actuaPanel = panelButton.getPanel1();
+
+		panel2.add(panelButton);
+	}
+
 	public void addElementToTableProducts(Object[] vector) {
 		products.addElementToTable(vector);
 	}
@@ -159,147 +256,7 @@ public class JFrameMain extends JFrame {
 	public void addData(Object[][] data) {
 		products.addData(data);
 	}
-//	public void addPanelChangeName(ActionListener actionListener) {
-//		panel2.removeAll();
-//
-//		JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_BLUE_PANEL, 30, 30);
-//		JPChangeInfor panelButton = new JPChangeInfor(actionListener);
-//
-//		rounderPanel.add(panelButton.labelName(actionListener));
-//		panel2.setBorder(new EmptyBorder(200, 300, 250, 300));
-//		panel2.add(rounderPanel);
-//
-//	}
 
-//
-//	public String getCodeBook() {
-//		return addBook.getIdBook();
-//	}
-//		
-//	public String getAddTittleBook() {
-//		return addBook.getTitleBook();
-//	}
-//	 public String getAddAuthorBook() {
-//		 return addBook.getAuthorBook();
-//	 }
-//	 public String getCategoryBook() {
-//		 return addBook.getCategory();
-//	 }
-//	 public String getLanguageBook() {
-//		 return addBook.getLanguage();
-//	 }
-//	 public String getEditorialBook() {
-//		 return addBook.getEditorial();
-//	 }
-//	 public int getNumberPagesBook() {
-//		 return addBook.getNumberPages();
-//	 }
-//	 
-//	 public void addPanelDeleteBook(ActionListener listener) {
-//			panel2.removeAll();
-//			JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_PURPLE_PANEL, 30, 30);
-//			panel2.add(rounderPanel, BorderLayout.CENTER);
-//			deleteBook = new JPDeleteBook(listener);
-//
-//			add(panel2);
-//			rounderPanel.add(deleteBook);
-//			panel2.setBorder(new EmptyBorder(200, 320, 250, 320));
-//			panel2.add(rounderPanel);
-//			panel2.setOpaque(false);
-//		}
-//
-//		public int getIdDelete() {
-//			return deleteBook.getIdBook();
-//		}
-//
-//	public void addPanelLogAdmin(ActionListener listener) {
-//		panel2.removeAll();
-//		JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_PURPLE_PANEL, 30, 30);
-//		panel2.add(rounderPanel, BorderLayout.CENTER);
-//		logAdmin = new JPLogInAdmin(listener);
-//
-//		add(panel2);
-//		rounderPanel.add(logAdmin);
-//		panel2.setBorder(new EmptyBorder(200, 320, 250, 320));
-//		panel2.setOpaque(false);
-//		panel2.add(rounderPanel);
-//	}
-//
-//	public int getIdAdminLogIn() {
-//		return logAdmin.getId();
-//	}
-//
-//	public int getCodeAdminLogIn() {
-//		return logAdmin.getCode();
-//	}
-//
-//	public void addTableAvailable(ActionListener listener) {
-//		panel2.setBorder(new EmptyBorder(150, 300, 100, 300));
-//		menuBar(listener);
-//		available = new JPTableAvailable();
-//		panel2.add(available, BorderLayout.CENTER);
-//	}
-//
-//	public void addElementToTableAvailable(ArrayList<Object[]> list) {
-//		available.addElementToTable(list);
-//	}
-//
-//	public void addShowTittleBook(ActionListener listener) {
-//		panel2.removeAll();
-//		JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_PURPLE_PANEL, 30, 30);
-//		panel2.add(rounderPanel, BorderLayout.CENTER);
-//		panelBook = new JPShowTittleBook(listener);
-//		rounderPanel.add(panelBook);
-//		add(panel2);
-//		panel2.setBorder(new EmptyBorder(200, 320, 250, 320));
-//		panel2.add(rounderPanel);
-//		panel2.setOpaque(false);
-//	}
-//
-//	public String getTittleBook() {
-//		return panelBook.getTittleBook();
-//	}
-//
-//	public void addTableTittleBook(ActionListener listener) {
-//		panel2.setBorder(new EmptyBorder(150, 300, 100, 300));
-//		menuBar(listener);
-//		add(panel2);
-//		book = new JPTableTittleBook();
-//		panel2.add(book, BorderLayout.CENTER);
-//	}
-//
-//	public void addElementToTableTitle(ArrayList<Object[]> list) {
-//		book.addElementToTable(list);
-//	}
-//
-//	public void addShowAuthorBook(ActionListener listener) {
-//		panel2.removeAll();
-//		JRounderPanel rounderPanel = new JRounderPanel(Constants.COLOR_PURPLE_PANEL, 30, 30);
-//		panel2.add(rounderPanel, BorderLayout.CENTER);
-//		panelAuthor = new JPShowAuthorBook(listener);
-//		rounderPanel.add(panelAuthor);
-//		add(panel2);
-//		panel2.setBorder(new EmptyBorder(200, 320, 250, 320));
-//		panel2.add(rounderPanel);
-//		panel2.setOpaque(false);
-//	}
-//	
-//	public String getAuthorBook() {
-//		return panelAuthor.getAuthotBook();
-//	}
-//
-//	public void addTableAuthorBook(ActionListener listener) {
-//		panel2.setBorder(new EmptyBorder(150, 300, 100, 300));
-//		menuBar(listener);
-//		add(panel2);
-//		authorBook = new JPTableAuthorBook();
-//		panel2.add(authorBook, BorderLayout.CENTER);
-//	}
-//	
-//	public void addElementToTableAuthor(ArrayList<Object[]> list) {
-//		authorBook.addElementToTable(list);
-//	}
-//	
 	public void addExcepetionLogIn() {
 		JOptionPane.showMessageDialog(null, "El usuario o la contrase�a estan incorrectos", "Inciar sesi�n",
 				JOptionPane.ERROR_MESSAGE);
