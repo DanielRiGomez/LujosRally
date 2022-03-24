@@ -61,9 +61,14 @@ public class JMenuItem extends JMenuBar {
 		report7.addActionListener(listener);
 
 		JMenuType report8 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_EDI_CHARAC, Constants.FONT_NUNITO,
-				Color.WHITE);
+				Color.BLACK);
 		report8.setActionCommand(Constants.TEXT_EDI_CHARAC);
 		report8.addActionListener(listener);
+
+		JMenuType report9 = new JMenuType(Constants.COLOR_BLUE_PANEL, Constants.TEXT_DELETE, Constants.FONT_NUNITO,
+				Color.BLACK);
+		report9.setActionCommand(Constants.TEXT_DELETE);
+		report9.addActionListener(listener);
 
 		menu.add(report1);
 		menu.add(report2);
@@ -73,6 +78,7 @@ public class JMenuItem extends JMenuBar {
 		menu.add(report6);
 		menu.add(report7);
 		menu.add(report8);
+		menu.add(report9);
 
 		return menu;
 	}

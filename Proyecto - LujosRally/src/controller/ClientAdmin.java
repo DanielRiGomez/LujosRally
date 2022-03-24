@@ -374,6 +374,14 @@ public class ClientAdmin implements ActionListener {
 			}
 			frameMain.revalidate();
 			break;
+		case Constants.TEXT_DELETE:
+			frameMain.addPanelDelete(this);
+			frameMain.revalidate();
+			break;
+		case Constants.BUTTON_ED_DELET:
+			frameMain.addPanelStart(this);
+			frameMain.revalidate();
+			break;
 		case Constants.BUTTON_CLOSE:
 			frameMain.setDefaultCloseOperation(0);
 			System.exit(0);

@@ -86,12 +86,6 @@ public class JMenuOption extends JPanel {
 		JMenuInvent ini = new JMenuInvent(listener);
 		panel.add(ini);
 
-	/** 	JButtonInformation ini = new JButtonInformation(10, 10, Constants.BUTTON_SHO_INVENTA, Constants.ICON_INVENT, 60,
-				60, Constants.COLOR_BLUE_PANEL2, Color.black, Constants.FONT_NUNITO);
-		ini.setActionCommand(Constants.BUTTON_SHO_INVENTA);
-		ini.addActionListener(listener);
-		panel.add(ini);
-	*/
 		return panel;
 	}
 

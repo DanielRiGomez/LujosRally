@@ -12,7 +12,7 @@ import javax.swing.border.EmptyBorder;
 public class JPChangeInfor extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JTextField idPro, anName, aUnit, aPrice,  aType,  aMarc,  aReferen, aDescrip, aChara;
+	private JTextField idPro, anName, aUnit, aPrice,  aType,  aMarc,  aReferen, aDescrip, aChara, delete;
 	private JPanel panel1;
 
 	public JPChangeInfor() {
@@ -199,6 +199,23 @@ public class JPChangeInfor extends JPanel {
 		return panel;
 	}
 
+	public JPanel addDeletePro() {
+		JPanel panel = new JPanel();
+		panel.setOpaque(false);
+
+		JLWindow idUserText = new JLWindow("Eliminar producto", Constants.FONT_NUNITO, Color.BLACK,
+				Constants.COLOR_BLUE_PANEL2);
+		idUserText.setBorder(new EmptyBorder(10, 0, 10, 150));
+
+		delete = new JTextField(15);
+		delete.setFont(Constants.FONT_NUNITO_TEXT);
+		delete.setBackground(Color.white);
+
+		panel.add(idUserText);
+		panel.add(delete);
+		return panel;
+	}
+
 	public JButtonInformation addButtGeneral(ActionListener listener) {
 		JButtonInformation butLog = new JButtonInformation(10, 10, Constants.BUTTON_RETURN_SELL, Constants.COLOR_RED,
 				Color.BLACK, Constants.FONT_NUNITO);
@@ -305,6 +322,19 @@ public class JPChangeInfor extends JPanel {
 		JButtonInformation addBook = new JButtonInformation(10, 10, Constants.BUTTON_ED_CHAR, Constants.COLOR_RED,
 				Color.BLACK, Constants.FONT_NUNITO);
 		addBook.setActionCommand("Características");
+		addBook.addActionListener(listener);
+
+		panel.add(addBook);
+		panel.add(addButtGeneral(listener));
+		return panel;
+	}
+
+	public JPanel addButtonDelete(ActionListener listener) {
+		JPanel panel = new JPanel();
+		panel.setOpaque(false);
+		JButtonInformation addBook = new JButtonInformation(10, 10, Constants.BUTTON_ED_DELET, Constants.COLOR_RED,
+				Color.BLACK, Constants.FONT_NUNITO);
+		addBook.setActionCommand(Constants.BUTTON_ED_DELET);
 		addBook.addActionListener(listener);
 
 		panel.add(addBook);

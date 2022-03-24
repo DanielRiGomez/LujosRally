@@ -43,7 +43,6 @@ public class JFrameMain extends JFrame {
 		getContentPane().removeAll();
 		panel2.setLayout(new BorderLayout());
 		addPanelAdmin(listener);
-	//	addTableProducts(listener);
 		add(panel2);
 	}
 
@@ -233,9 +232,24 @@ public class JFrameMain extends JFrame {
 		panel2.add(panelButton);
 	}
 
+	
+	public void addPanelDelete(ActionListener actionListener) {
+		panel2.removeAll();
+
+		JPanel changeName = new JPanel();
+		changeName = changeInfor.labelGeneral(changeInfor.addDeletePro(), changeInfor.addButtonDelete(actionListener));
+		JPBGeneral panelButton = new JPBGeneral(150, 0, 0, 0, actionListener, changeName, 100, 50, 100, 100);
+
+		actuaPanel = panelButton.getPanel1();
+
+		panel2.add(panelButton);
+	}
+
 	public void addElementToTableProducts(Object[] vector) {
 		products.addElementToTable(vector);
 	}
+
+
 
 	public void addElementToTableSells(Object[] vector) {
 		sells.addElementToTable(vector);

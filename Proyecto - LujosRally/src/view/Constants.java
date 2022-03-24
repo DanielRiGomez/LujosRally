@@ -48,6 +48,7 @@ public class Constants {
 	public static final String TEXT_EDI_REF = "Editar Referencia del producto";
 	public static final String TEXT_EDI_DESCR = "Editar Descripción del producto";
 	public static final String TEXT_EDI_CHARAC = "Editar Características adicionales del producto";
+	public static final String TEXT_DELETE = "Eliminar un producto";
 
 	public static final String TEXT_SHOW_INVEN = "Ver tabla de inventario";
 	public static final String TEXT_SHOW_TOTAL_PRICE = "Ver costo total de inventario";
@@ -69,6 +70,7 @@ public class Constants {
 	public static final String BUTTON_ED_REFE = "Guardar Referencia";
 	public static final String BUTTON_ED_DESC = "Guardar descripcion";
 	public static final String BUTTON_ED_CHAR = "Guardar Características";
+	public static final String BUTTON_ED_DELET = "Eliminar";
 
 	public static final String BUTTON_START = "Inicio                              ";
 	public static final String BUTTON_REG_PRODUCT = "Registrar Producto       ";
